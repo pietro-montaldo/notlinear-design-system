@@ -1,0 +1,31 @@
+<!doctype html>
+<!-- @dsCard group="Components" name="Cards" subtitle="Light + inverted lesson cards" viewport="700x220" -->
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="_shared.css">
+<style>
+  .row-c { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .crd { background: var(--bg-surface); border: 1px solid var(--border-1); border-radius: var(--radius-lg); padding: 22px; box-shadow: var(--shadow-1); transition: box-shadow var(--dur-fast), transform var(--dur-fast); }
+  .crd:hover { box-shadow: var(--shadow-2); transform: translateY(-1px); }
+  .crd .eb { font: 600 11px/1 var(--font-sans); letter-spacing: 0.14em; text-transform: uppercase; color: var(--fg-3); }
+  .crd h3 { font-family: var(--font-serif); font-size: 22px; line-height: 1.1; margin: 10px 0 6px; color: var(--fg-1); letter-spacing: -0.015em; }
+  .crd p { font-family: var(--font-sans); font-size: 13.5px; line-height: 1.45; color: var(--fg-2); margin: 0; }
+  .crd.dark { background: var(--nl-burgundy); border-color: transparent; color: var(--nl-ivory); }
+  .crd.dark .eb { color: rgba(252,250,246,.65); }
+  .crd.dark h3, .crd.dark p { color: var(--nl-ivory); }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="row-c">
+    <div class="crd">
+      <div class="eb">01 · Foundations</div>
+      <h3>How LLMs really work</h3>
+      <p>Mental models that survive contact with real products and teams.</p>
+    </div>
+    <div class="crd dark">
+      <div class="eb">02 · Frameworks</div>
+      <h3>Building AI growth systems</h3>
+      <p>Proven templates from leading B2B operators.</p>
+    </div>
+  </div>
+</div>
+</body></html>

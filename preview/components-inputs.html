@@ -1,0 +1,34 @@
+<!doctype html>
+<!-- @dsCard group="Components" name="Form inputs" subtitle="Text · select · checked option" viewport="700x260" -->
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="_shared.css">
+<style>
+  .row-f { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .field label { display:block; font-family: var(--font-sans); font-weight: 600; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--fg-3); margin-bottom: 6px; }
+  .input, select { width: 100%; box-sizing: border-box; padding: 12px 14px; border-radius: var(--radius-sm); border: 1px solid var(--border-2); background: var(--bg-surface); color: var(--fg-1); font-family: var(--font-sans); font-size: 15px; font-weight: 500; outline: none; transition: border-color var(--dur-fast); }
+  .input:focus { border-color: var(--nl-burgundy); }
+  .chk { display: flex; align-items: center; gap: 10px; padding: 12px 14px; border: 1px solid var(--border-2); border-radius: var(--radius-sm); font-family: var(--font-sans); font-size: 14px; color: var(--fg-1); }
+  .chk .box { width: 16px; height: 16px; border-radius: 4px; background: var(--nl-burgundy); display: inline-grid; place-items: center; color: var(--nl-ivory); font-size: 11px; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="row-f">
+    <div class="field">
+      <label>Full name</label>
+      <input class="input" placeholder="Pietro Montaldo" value="Pietro Montaldo">
+    </div>
+    <div class="field">
+      <label>Work email</label>
+      <input class="input" placeholder="you@company.com">
+    </div>
+    <div class="field">
+      <label>Role</label>
+      <select class="input"><option>GTM leader</option><option>Founder</option><option>Operator</option></select>
+    </div>
+    <div class="field">
+      <label>Cohort</label>
+      <div class="chk"><span class="box">✓</span> Spring 2026 · Tues PM</div>
+    </div>
+  </div>
+</div>
+</body></html>

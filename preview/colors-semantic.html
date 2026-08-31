@@ -1,0 +1,40 @@
+<!doctype html>
+<!-- @dsCard group="Colors" name="Semantic colors" subtitle="Background + foreground tokens" viewport="700x280" -->
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="_shared.css">
+<style>
+  .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+  .chip { aspect-ratio: 1.2 / 1; border-radius: var(--radius-sm); border: 1px solid var(--border-1); padding: 10px; display: flex; flex-direction: column; justify-content: space-between; }
+  .chip .k { font-family: var(--font-mono); font-size: 10.5px; color: inherit; opacity: 0.85; }
+  .chip .v { font-family: var(--font-mono); font-size: 10.5px; opacity: 0.6; }
+</style>
+</head><body>
+<div class="card tight">
+  <div class="grid">
+    <div class="chip" style="background: var(--nl-ivory); color: var(--nl-burgundy);">
+      <span class="k">--bg-page</span><span class="v">ivory</span>
+    </div>
+    <div class="chip" style="background: #FFFFFF; color: var(--nl-burgundy);">
+      <span class="k">--bg-surface</span><span class="v">#FFF</span>
+    </div>
+    <div class="chip" style="background: var(--nl-ivory-warm); color: var(--nl-burgundy);">
+      <span class="k">--bg-sunken</span><span class="v">ivory-warm</span>
+    </div>
+    <div class="chip" style="background: var(--nl-burgundy); color: var(--nl-ivory); border-color: transparent;">
+      <span class="k">--bg-inverse</span><span class="v">burgundy</span>
+    </div>
+
+    <div class="chip" style="background: var(--nl-burgundy); color: var(--nl-ivory); border-color: transparent;">
+      <span class="k">--fg-1</span><span class="v">primary</span>
+    </div>
+    <div class="chip" style="background: #5A3540; color: var(--nl-ivory); border-color: transparent;">
+      <span class="k">--fg-2</span><span class="v">secondary</span>
+    </div>
+    <div class="chip" style="background: #87707A; color: var(--nl-ivory); border-color: transparent;">
+      <span class="k">--fg-3</span><span class="v">tertiary</span>
+    </div>
+    <div class="chip" style="background: var(--nl-ivory); color: var(--nl-burgundy);">
+      <span class="k">--fg-on-inverse</span><span class="v">ivory</span>
+    </div>
+  </div>
+</div>
+</body></html>

@@ -1,0 +1,35 @@
+<!doctype html>
+<!-- @dsCard group="Colors" name="Color pairings" subtitle="Recommended high-contrast combos" viewport="700x220" -->
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="_shared.css">
+<style>
+  .pair { flex: 1; aspect-ratio: 1.6 / 1; border-radius: var(--radius-md); position: relative; overflow: hidden; border: 1px solid var(--border-1); }
+  .pair .half { position: absolute; inset: 0 50% 0 0; }
+  .pair .half:last-child { left: 50%; right: 0; }
+  .pair .glyph { position: absolute; inset: 0; display: grid; place-items: center; font-family: var(--font-serif); font-size: 36px; }
+  .pair .glyph .right { color: var(--nl-burgundy); }
+  .pair span.tag { position: absolute; left: 10px; bottom: 8px; font: 600 10px/1 var(--font-sans); letter-spacing: 0.14em; text-transform: uppercase; color: var(--fg-3); }
+</style>
+</head><body>
+<div class="card">
+  <div class="row">
+    <div class="pair">
+      <div class="half" style="background: var(--nl-burgundy);"></div>
+      <div class="half" style="background: var(--nl-ivory);"></div>
+      <div class="glyph"><span style="color: var(--nl-ivory)">A</span><span style="color: var(--nl-burgundy)">a</span></div>
+      <span class="tag">burgundy ↔ ivory</span>
+    </div>
+    <div class="pair">
+      <div class="half" style="background: var(--nl-burgundy);"></div>
+      <div class="half" style="background: var(--nl-mist);"></div>
+      <div class="glyph"><span style="color: var(--nl-mist)">A</span><span style="color: var(--nl-burgundy)">a</span></div>
+      <span class="tag">burgundy ↔ mist</span>
+    </div>
+    <div class="pair">
+      <div class="half" style="background: var(--nl-ivory);"></div>
+      <div class="half" style="background: var(--nl-lilac);"></div>
+      <div class="glyph"><span style="color: var(--nl-burgundy)">A</span><span style="color: var(--nl-burgundy)">a</span></div>
+      <span class="tag">ivory ↔ lilac</span>
+    </div>
+  </div>
+</div>
+</body></html>

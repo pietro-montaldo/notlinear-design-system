@@ -1,0 +1,34 @@
+<!doctype html>
+<!-- @dsCard group="Spacing" name="Motion" subtitle="Standard easing · 140 / 240 / 420ms" viewport="700x220" -->
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="_shared.css">
+<style>
+  .row-m { display: flex; gap: 18px; align-items: stretch; }
+  .col { flex: 1; padding: 14px 16px; border: 1px solid var(--border-1); border-radius: var(--radius-md); background: var(--bg-surface); }
+  .col h4 { font-family: var(--font-serif); font-size: 18px; margin: 0 0 6px; color: var(--fg-1); }
+  .col p  { font-family: var(--font-mono); font-size: 11px; color: var(--fg-2); margin: 0; line-height: 1.4; }
+  .col .dur { display: inline-block; margin-top: 8px; font-family: var(--font-mono); font-size: 10px; color: var(--fg-3); }
+  .dot { width: 12px; height: 12px; border-radius: 999px; background: var(--nl-burgundy); display: inline-block; vertical-align: middle; margin-right: 8px; animation: drift 2.4s var(--ease-standard) infinite; }
+  @keyframes drift { 0%,100% { transform: translateX(0); opacity: 1; } 50% { transform: translateX(20px); opacity: 0.6; } }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="row-m">
+    <div class="col">
+      <h4><span class="dot"></span>Standard</h4>
+      <p>cubic-bezier<br>(0.2, 0.7, 0.2, 1)</p>
+      <span class="dur">240ms · default</span>
+    </div>
+    <div class="col">
+      <h4>Fast</h4>
+      <p>state changes,<br>hover/press</p>
+      <span class="dur">140ms · --dur-fast</span>
+    </div>
+    <div class="col">
+      <h4>Slow</h4>
+      <p>page transitions,<br>hero entrances</p>
+      <span class="dur">420ms · --dur-slow</span>
+    </div>
+  </div>
+</div>
+</body></html>

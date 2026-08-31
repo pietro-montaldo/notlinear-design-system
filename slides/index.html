@@ -1,0 +1,180 @@
+<!doctype html>
+<!-- @dsCard group="Slides" name="Slide deck — 5 templates" subtitle="Title · Section · Quote · Comparison · Closing" viewport="1280x720" -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>NotLinear · Slide templates</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  :root {
+    --slide-pad: 96px;
+  }
+  html, body { margin: 0; padding: 0; background: #1a0b10; color: var(--fg-1); }
+  deck-stage { display: block; }
+  section.slide {
+    width: 1280px;
+    height: 720px;
+    box-sizing: border-box;
+    padding: var(--slide-pad);
+    background: var(--nl-ivory);
+    color: var(--fg-1);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    font-family: var(--font-sans);
+  }
+  /* shared chrome — section number top-left, logo top-right */
+  .chrome-top {
+    position: absolute; top: 36px; left: var(--slide-pad); right: var(--slide-pad);
+    display: flex; align-items: center; justify-content: space-between;
+    font: 600 12px/1 var(--font-sans); letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--fg-3);
+  }
+  .chrome-top img { height: 22px; }
+  .chrome-bot {
+    position: absolute; bottom: 36px; left: var(--slide-pad); right: var(--slide-pad);
+    display: flex; align-items: center; justify-content: space-between;
+    font: 600 11px/1 var(--font-sans); letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--fg-3);
+  }
+  .eyebrow { font: 600 13px/1 var(--font-sans); letter-spacing: 0.2em; text-transform: uppercase; color: var(--fg-2); }
+  .display { font-family: var(--font-serif); font-weight: 400; font-size: 104px; line-height: 1.02; letter-spacing: -0.025em; color: var(--fg-1); margin: 0; }
+  .h1 { font-family: var(--font-serif); font-weight: 400; font-size: 76px; line-height: 1.05; letter-spacing: -0.022em; margin: 0; }
+  .body { font-family: var(--font-sans); font-weight: 500; font-size: 22px; line-height: 1.5; color: var(--fg-2); margin: 0; max-width: 720px; }
+
+  /* ============================== Slide 1: Title ============================== */
+  .s-title { justify-content: flex-end; gap: 36px; }
+  .s-title .display { max-width: 1000px; }
+  .s-title .mark {
+    position: absolute; top: 100px; left: var(--slide-pad);
+    height: 130px;
+  }
+
+  /* ============================== Slide 2: Section divider ============================== */
+  .s-section { background: var(--nl-burgundy); color: var(--nl-ivory); justify-content: space-between; }
+  .s-section .chrome-top, .s-section .chrome-bot { color: rgba(252,250,246,0.55); }
+  .s-section .chrome-top img { filter: brightness(0) invert(1); }
+  .s-section .num { font-family: var(--font-serif); font-weight: 400; font-size: 220px; line-height: 0.95; letter-spacing: -0.04em; margin: 0; color: var(--nl-ivory); }
+  .s-section .ttl { font-family: var(--font-serif); font-weight: 400; font-size: 76px; line-height: 1.05; letter-spacing: -0.022em; color: var(--nl-ivory); margin: 0; max-width: 820px; }
+  .s-section .sub { font-family: var(--font-sans); font-weight: 500; font-size: 20px; line-height: 1.5; color: rgba(252,250,246,0.7); max-width: 540px; margin: 16px 0 0; }
+  .s-section .markghost { position: absolute; right: -120px; bottom: -180px; height: 720px; opacity: 0.08; filter: brightness(0) invert(1); }
+
+  /* ============================== Slide 3: Big quote ============================== */
+  .s-quote { background: var(--nl-linen); justify-content: center; align-items: flex-start; }
+  .s-quote .open { font-family: var(--font-serif); font-size: 200px; line-height: 0.6; color: var(--nl-burgundy); opacity: 0.18; margin: 0 0 -30px -10px; }
+  .s-quote blockquote { font-family: var(--font-serif); font-weight: 400; font-size: 64px; line-height: 1.1; letter-spacing: -0.022em; color: var(--fg-1); margin: 0; max-width: 1000px; }
+  .s-quote .attr { margin-top: 36px; display: flex; align-items: center; gap: 14px; font: 500 18px/1 var(--font-sans); color: var(--fg-2); }
+  .s-quote .attr .rule { width: 48px; height: 1px; background: var(--nl-burgundy); }
+
+  /* ============================== Slide 4: Comparison ============================== */
+  .s-compare .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 40px; flex: 1; align-items: stretch; }
+  .s-compare .col { padding: 32px; border-radius: var(--radius-lg); display: flex; flex-direction: column; }
+  .s-compare .col.before { background: var(--bg-surface); border: 1px solid var(--border-1); color: var(--fg-2); }
+  .s-compare .col.after  { background: var(--nl-burgundy); color: var(--nl-ivory); }
+  .s-compare .col .lab { font: 600 12px/1 var(--font-sans); letter-spacing: 0.18em; text-transform: uppercase; opacity: 0.7; }
+  .s-compare .col .h { font-family: var(--font-serif); font-weight: 400; font-size: 40px; line-height: 1.08; letter-spacing: -0.02em; margin: 16px 0 18px; }
+  .s-compare .col ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 14px; }
+  .s-compare .col li { font: 500 18px/1.45 var(--font-sans); display: flex; gap: 14px; align-items: baseline; }
+  .s-compare .col li::before { content: ""; width: 18px; height: 1px; background: currentColor; opacity: 0.5; margin-top: 12px; flex-shrink: 0; }
+
+  /* ============================== Slide 5: Closing ============================== */
+  .s-closing { background: var(--nl-burgundy); color: var(--nl-ivory); justify-content: center; align-items: center; text-align: center; gap: 40px; }
+  .s-closing .chrome-top, .s-closing .chrome-bot { color: rgba(252,250,246,0.55); }
+  .s-closing .chrome-top img { filter: brightness(0) invert(1); }
+  .s-closing .h { font-family: var(--font-serif); font-weight: 400; font-size: 96px; line-height: 1.02; letter-spacing: -0.025em; max-width: 1000px; margin: 0; }
+  .s-closing .sub { font: 500 22px/1.5 var(--font-sans); color: rgba(252,250,246,0.75); max-width: 640px; margin: 0; }
+  .s-closing .cta {
+    background: var(--nl-ivory); color: var(--nl-burgundy);
+    font: 600 20px/1 var(--font-sans);
+    border-radius: 999px; padding: 22px 40px;
+    margin-top: 12px; display: inline-block;
+    text-decoration: none;
+  }
+  .s-closing .mark { height: 64px; opacity: 0.95; filter: brightness(0) invert(1); }
+</style>
+</head>
+<body>
+<deck-stage>
+
+  <!-- ====================== 01 — Title ====================== -->
+  <section class="slide s-title" data-screen-label="01 Title">
+    <img class="mark" src="../assets/logos/logo_mark/logo_mark_1.png" alt="">
+    <div class="chrome-top"><span>NotLinear · 2026</span><span>From understanding to execution</span></div>
+    <p class="eyebrow">AI growth systems bootcamp</p>
+    <h1 class="display">Gain confidence to build<br>&amp; extend AI systems.</h1>
+    <p class="body">A cohort program for non-technical operators, founders, and GTM leaders. Templates, frameworks, and the working models behind modern AI products.</p>
+    <div class="chrome-bot"><span>01 / 05</span><span>Pietro Montaldo</span></div>
+  </section>
+
+  <!-- ====================== 02 — Section divider ====================== -->
+  <section class="slide s-section" data-screen-label="02 Section">
+    <img class="markghost" src="../assets/logos/logo_mark/logo_mark_1.png" alt="">
+    <div class="chrome-top">
+      <span>Module 01</span>
+      <img src="../assets/logos/primary_logo_1.png" alt="NotLinear" style="height:26px;">
+    </div>
+    <div>
+      <h2 class="num">01</h2>
+      <p class="eyebrow" style="color: rgba(252,250,246,0.65); margin-top: 12px;">Foundations</p>
+    </div>
+    <div>
+      <h3 class="ttl">How LLMs actually work<br>— minus the hype.</h3>
+      <p class="sub">Mental models that survive contact with real products, real users, and real budgets.</p>
+    </div>
+    <div class="chrome-bot" style="color: rgba(252,250,246,0.55);"><span>02 / 05</span><span>NotLinear · AI growth systems</span></div>
+  </section>
+
+  <!-- ====================== 03 — Big quote ====================== -->
+  <section class="slide s-quote" data-screen-label="03 Quote">
+    <div class="chrome-top"><span>Voices</span><img src="../assets/logos/primary_logo_1.png" alt="" style="height:22px"></div>
+    <div class="open">“</div>
+    <blockquote>Growth, learning, and progress are rarely linear — the work is to keep moving anyway.</blockquote>
+    <div class="attr"><span class="rule"></span>Pietro Montaldo · Founder, NotLinear</div>
+    <div class="chrome-bot"><span>03 / 05</span><span>From understanding to execution</span></div>
+  </section>
+
+  <!-- ====================== 04 — Comparison ====================== -->
+  <section class="slide s-compare" data-screen-label="04 Comparison">
+    <div class="chrome-top"><span>Module 03 · Frameworks</span><img src="../assets/logos/primary_logo_1.png" alt="" style="height:22px"></div>
+    <p class="eyebrow">A quick contrast</p>
+    <h2 class="h1" style="font-size: 56px; max-width: 900px;">The shift from one-off prompts<br>to growth systems.</h2>
+    <div class="cols">
+      <div class="col before">
+        <span class="lab">Before</span>
+        <h3 class="h">Linear<br>prompting.</h3>
+        <ul>
+          <li>One prompt, one output</li>
+          <li>Templates live in scattered docs</li>
+          <li>Quality depends on individual skill</li>
+          <li>Hard to compound across teams</li>
+        </ul>
+      </div>
+      <div class="col after">
+        <span class="lab">After</span>
+        <h3 class="h">NotLinear<br>systems.</h3>
+        <ul>
+          <li>Reusable templates with guardrails</li>
+          <li>Evaluations baked into the workflow</li>
+          <li>Shared library across the org</li>
+          <li>Confidence to extend &amp; iterate</li>
+        </ul>
+      </div>
+    </div>
+    <div class="chrome-bot" style="margin-top: auto;"><span>04 / 05</span><span>NotLinear · Frameworks</span></div>
+  </section>
+
+  <!-- ====================== 05 — Closing CTA ====================== -->
+  <section class="slide s-closing" data-screen-label="05 Closing">
+    <div class="chrome-top"><span>Spring 2026 cohort</span><span>Limited seats</span></div>
+    <img class="mark" src="../assets/logos/logo_mark/logo_mark_1.png" alt="">
+    <h2 class="h">From understanding<br>to execution.</h2>
+    <p class="sub">Eight weeks. Live cohort. Templates you keep forever.</p>
+    <a class="cta" href="#">Enroll now →</a>
+    <div class="chrome-bot"><span>05 / 05</span><span>notlinear.ai</span></div>
+  </section>
+
+</deck-stage>
+<script src="deck-stage.js"></script>
+</body>
+</html>

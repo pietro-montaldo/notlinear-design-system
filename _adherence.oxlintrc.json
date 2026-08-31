@@ -1,0 +1,218 @@
+{
+  "plugins": [
+    "react",
+    "import"
+  ],
+  "rules": {
+    "react/forbid-elements": [
+      "warn",
+      {
+        "forbid": []
+      }
+    ],
+    "no-restricted-imports": [
+      "warn",
+      {
+        "patterns": [
+          {
+            "group": [
+              "slides/**",
+              "ui_kits/marketing/**"
+            ],
+            "message": "Import design-system components from 'index.js', not component internals."
+          }
+        ]
+      }
+    ],
+    "no-restricted-syntax": [
+      "warn",
+      {
+        "selector": "Literal[value=/#[0-9a-fA-F]{3,8}\\b/]",
+        "message": "Raw hex color — use a design-system color token via var()."
+      },
+      {
+        "selector": "Literal[value=/\\b\\d+px\\b/]",
+        "message": "Raw px value — use a design-system spacing token via var()."
+      },
+      {
+        "selector": "Literal[value=/font-family\\s*:\\s*(?!['\\\"]?(?:STK Bureau Serif|Gilroy))/i]",
+        "message": "Font not provided by the design system. Available: STK Bureau Serif, Gilroy."
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/index.js"
+      ],
+      "rules": {
+        "no-restricted-imports": "off"
+      }
+    }
+  ],
+  "x-omelette": {
+    "components": {},
+    "tokens": [
+      "--accent",
+      "--accent-lilac",
+      "--accent-moss",
+      "--accent-soft",
+      "--bg-inverse",
+      "--bg-page",
+      "--bg-sunken",
+      "--bg-surface",
+      "--border-1",
+      "--border-2",
+      "--border-strong",
+      "--dur-base",
+      "--dur-fast",
+      "--dur-slow",
+      "--ease-emphasis",
+      "--ease-standard",
+      "--fg-1",
+      "--fg-2",
+      "--fg-3",
+      "--fg-on-accent",
+      "--fg-on-inverse",
+      "--font-mono",
+      "--font-sans",
+      "--font-serif",
+      "--lh-body",
+      "--lh-display",
+      "--lh-h",
+      "--lh-loose",
+      "--lh-tight",
+      "--ls-body",
+      "--ls-display",
+      "--ls-eyebrow",
+      "--ls-h",
+      "--ls-micro",
+      "--nl-burgundy",
+      "--nl-burgundy-10",
+      "--nl-burgundy-20",
+      "--nl-burgundy-80",
+      "--nl-burgundy-90",
+      "--nl-ink",
+      "--nl-ivory",
+      "--nl-ivory-warm",
+      "--nl-lilac",
+      "--nl-linen",
+      "--nl-mist",
+      "--nl-moss",
+      "--radius-lg",
+      "--radius-md",
+      "--radius-pill",
+      "--radius-sm",
+      "--radius-xl",
+      "--radius-xs",
+      "--shadow-1",
+      "--shadow-2",
+      "--shadow-3",
+      "--space-1",
+      "--space-10",
+      "--space-2",
+      "--space-3",
+      "--space-4",
+      "--space-5",
+      "--space-6",
+      "--space-7",
+      "--space-8",
+      "--space-9",
+      "--t-body",
+      "--t-body-lg",
+      "--t-body-sm",
+      "--t-caption",
+      "--t-display",
+      "--t-display-xl",
+      "--t-eyebrow",
+      "--t-h1",
+      "--t-h2",
+      "--t-h3",
+      "--t-h4",
+      "--t-micro"
+    ],
+    "tokenKinds": {
+      "--nl-burgundy": "color",
+      "--nl-ivory": "color",
+      "--nl-mist": "color",
+      "--nl-lilac": "color",
+      "--nl-linen": "color",
+      "--nl-moss": "color",
+      "--nl-burgundy-90": "color",
+      "--nl-burgundy-80": "color",
+      "--nl-burgundy-20": "color",
+      "--nl-burgundy-10": "color",
+      "--nl-ivory-warm": "color",
+      "--nl-ink": "color",
+      "--bg-page": "color",
+      "--bg-surface": "color",
+      "--bg-sunken": "color",
+      "--bg-inverse": "color",
+      "--fg-1": "color",
+      "--fg-2": "color",
+      "--fg-3": "color",
+      "--fg-on-inverse": "color",
+      "--fg-on-accent": "color",
+      "--accent": "color",
+      "--accent-soft": "color",
+      "--accent-lilac": "color",
+      "--accent-moss": "color",
+      "--border-1": "color",
+      "--border-2": "color",
+      "--border-strong": "color",
+      "--shadow-1": "shadow",
+      "--shadow-2": "shadow",
+      "--shadow-3": "shadow",
+      "--font-serif": "font",
+      "--font-sans": "font",
+      "--font-mono": "font",
+      "--t-display-xl": "spacing",
+      "--t-display": "spacing",
+      "--t-h1": "spacing",
+      "--t-h2": "spacing",
+      "--t-h3": "spacing",
+      "--t-h4": "spacing",
+      "--t-eyebrow": "spacing",
+      "--t-body-lg": "spacing",
+      "--t-body": "spacing",
+      "--t-body-sm": "spacing",
+      "--t-caption": "spacing",
+      "--t-micro": "spacing",
+      "--lh-display": "other",
+      "--lh-h": "other",
+      "--lh-tight": "other",
+      "--lh-body": "other",
+      "--lh-loose": "other",
+      "--ls-display": "spacing",
+      "--ls-h": "spacing",
+      "--ls-body": "other",
+      "--ls-eyebrow": "spacing",
+      "--ls-micro": "spacing",
+      "--space-1": "spacing",
+      "--space-2": "spacing",
+      "--space-3": "spacing",
+      "--space-4": "spacing",
+      "--space-5": "spacing",
+      "--space-6": "spacing",
+      "--space-7": "spacing",
+      "--space-8": "spacing",
+      "--space-9": "spacing",
+      "--space-10": "spacing",
+      "--radius-xs": "radius",
+      "--radius-sm": "radius",
+      "--radius-md": "radius",
+      "--radius-lg": "radius",
+      "--radius-xl": "radius",
+      "--radius-pill": "radius",
+      "--ease-standard": "other",
+      "--ease-emphasis": "other",
+      "--dur-fast": "other",
+      "--dur-base": "other",
+      "--dur-slow": "other"
+    },
+    "fontFamilies": [
+      "Gilroy",
+      "STK Bureau Serif"
+    ]
+  }
+}

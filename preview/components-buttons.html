@@ -1,0 +1,23 @@
+<!doctype html>
+<!-- @dsCard group="Components" name="Buttons" subtitle="Primary · Secondary · Link · Disabled" viewport="700x140" -->
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="_shared.css">
+<style>
+  .row-b { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+  button { font-family: var(--font-sans); font-weight: 600; font-size: 15px; cursor: pointer; border-radius: var(--radius-pill); padding: 12px 24px; transition: opacity var(--dur-fast) var(--ease-standard), background var(--dur-fast) var(--ease-standard); }
+  .b-primary { background: var(--nl-burgundy); color: var(--nl-ivory); border: 1px solid var(--nl-burgundy); }
+  .b-primary:hover { opacity: 0.9; }
+  .b-secondary { background: var(--nl-ivory); color: var(--nl-burgundy); border: 1px solid var(--nl-burgundy); }
+  .b-link { background: transparent; border: none; color: var(--nl-burgundy); text-decoration: underline; text-underline-offset: 3px; padding: 12px 4px; }
+  .b-disabled { background: rgba(58,23,33,.08); color: rgba(58,23,33,.4); border: 1px solid transparent; cursor: not-allowed; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="row-b">
+    <button class="b-primary">Enroll now</button>
+    <button class="b-secondary">Read the syllabus</button>
+    <button class="b-link">Explore curriculum →</button>
+    <button class="b-disabled">Coming soon</button>
+  </div>
+</div>
+</body></html>

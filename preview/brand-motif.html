@@ -1,0 +1,30 @@
+<!doctype html>
+<!-- @dsCard group="Brand" name="Brand panels" subtitle="Editorial dark + light hero panels" viewport="700x360" -->
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="_shared.css">
+<style>
+  .row-v { display: flex; gap: 12px; }
+  .panel { flex: 1; aspect-ratio: 1.15 / 1; border-radius: var(--radius-md); display: flex; flex-direction: column; justify-content: space-between; padding: 18px; }
+  .panel .h { font-family: var(--font-serif); font-size: 26px; line-height: 1.04; letter-spacing: -0.02em; }
+  .panel .e { font: 600 10.5px/1 var(--font-sans); letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.7; }
+  .panel.dark { background: var(--nl-burgundy); color: var(--nl-ivory); position: relative; overflow: hidden; }
+  .panel.light { background: var(--nl-ivory); color: var(--nl-burgundy); border: 1px solid var(--border-1); position: relative; overflow: hidden; }
+  .panel img.bg { position: absolute; right: -40px; bottom: -30px; height: 90%; opacity: 0.35; pointer-events: none; }
+  .panel.dark img.bg { filter: brightness(0) invert(1); opacity: 0.18; }
+</style>
+</head>
+<body>
+<div class="card tight">
+  <div class="row-v">
+    <div class="panel dark">
+      <span class="e">01 · Cohort</span>
+      <span class="h">From understanding<br>to execution.</span>
+      <img class="bg" src="../assets/logos/logo_mark/logo_mark_1.png">
+    </div>
+    <div class="panel light">
+      <span class="e">02 · Templates</span>
+      <span class="h">Proven frameworks,<br>used in real workflows.</span>
+      <img class="bg" src="../assets/logos/logo_mark/logo_mark_1.png">
+    </div>
+  </div>
+</div>
+</body></html>

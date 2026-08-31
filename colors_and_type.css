@@ -1,0 +1,313 @@
+/* ============================================================
+   NotLinear Design System — Foundations
+   Type + Color tokens, semantic styles
+   ------------------------------------------------------------
+   Brand: NotLinear / NotLinear.AI
+   Founder: Pietro Montaldo
+   ============================================================ */
+
+/* ---------- Web fonts ---------- */
+@font-face {
+  font-family: "STK Bureau Serif";
+  src: url("./fonts/STKBureauSerif-Book.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "STK Bureau Serif";
+  src: url("./fonts/STKBureauSerif-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "STK Bureau Serif";
+  src: url("./fonts/STKBureauSerif-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "STK Bureau Serif";
+  src: url("./fonts/STKBureauSerif-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "STK Bureau Serif";
+  src: url("./fonts/STKBureauSerif-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gilroy";
+  src: url("./fonts/gilroy-medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Gilroy";
+  src: url("./fonts/gilroy-semibold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Gilroy";
+  src: url("./fonts/gilroy-bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* ----------------------------------------------------------
+     COLOR — Primary palette (per brand deck §2.1)
+     ---------------------------------------------------------- */
+  --nl-burgundy:       #3A1721;  /* Deep burgundy — primary brand */
+  --nl-ivory:          #FCFAF6;  /* Warm ivory  — neutral / page */
+  --nl-mist:           #CAE3F2;  /* Mist blue   — primary accent */
+
+  /* COLOR — Secondary palette (§2.2) */
+  --nl-lilac:          #D5CFF5;  /* Dust lilac */
+  --nl-linen:          #F4F1E2;  /* Cream linen */
+  --nl-moss:           #38422A;  /* Forest moss */
+
+  /* Tonal variants (derived — used sparingly) */
+  --nl-burgundy-90:    #4A2330;
+  --nl-burgundy-80:    #5A323E;
+  --nl-burgundy-20:    #E8DADE;
+  --nl-burgundy-10:    #F2E9EC;
+  --nl-ivory-warm:     #F6F1E6;  /* slightly warmer ivory */
+  --nl-ink:            #1B0A10;  /* near-black, derived from burgundy */
+
+  /* ----------------------------------------------------------
+     SEMANTIC COLOR — light theme (ivory canvas)
+     ---------------------------------------------------------- */
+  --bg-page:           var(--nl-ivory);
+  --bg-surface:        #FFFFFF;
+  --bg-sunken:         var(--nl-ivory-warm);
+  --bg-inverse:        var(--nl-burgundy);
+
+  --fg-1:              var(--nl-burgundy);    /* primary text */
+  --fg-2:              #5A3540;               /* secondary text */
+  --fg-3:              #87707A;               /* tertiary / meta */
+  --fg-on-inverse:     var(--nl-ivory);
+  --fg-on-accent:      var(--nl-burgundy);
+
+  --accent:            var(--nl-mist);
+  --accent-soft:       var(--nl-linen);
+  --accent-lilac:      var(--nl-lilac);
+  --accent-moss:       var(--nl-moss);
+
+  --border-1:          rgba(58, 23, 33, 0.14); /* hairline */
+  --border-2:          rgba(58, 23, 33, 0.28); /* defined */
+  --border-strong:     var(--nl-burgundy);
+
+  --shadow-1:          0 1px 2px rgba(58, 23, 33, 0.06);
+  --shadow-2:          0 4px 16px rgba(58, 23, 33, 0.08);
+  --shadow-3:          0 18px 48px rgba(58, 23, 33, 0.14);
+
+  /* ----------------------------------------------------------
+     TYPOGRAPHY — families
+     ---------------------------------------------------------- */
+  --font-serif:        "STK Bureau Serif", "Cormorant Garamond", "Source Serif Pro", Georgia, serif;
+  --font-sans:         "Gilroy", "Inter", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --font-mono:         "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* TYPE — sizes  (editorial scale, optimised for serif display) */
+  --t-display-xl:      96px;   /* hero display */
+  --t-display:         72px;
+  --t-h1:              56px;
+  --t-h2:              40px;
+  --t-h3:              28px;
+  --t-h4:              22px;
+  --t-eyebrow:         14px;
+  --t-body-lg:         20px;
+  --t-body:            17px;
+  --t-body-sm:         15px;
+  --t-caption:         13px;
+  --t-micro:           11px;
+
+  /* Line heights — editorial: tight for display, comfortable for body */
+  --lh-display:        1.02;
+  --lh-h:              1.08;
+  --lh-tight:          1.18;
+  --lh-body:           1.5;
+  --lh-loose:          1.65;
+
+  /* Letter-spacing */
+  --ls-display:        -0.02em;
+  --ls-h:              -0.015em;
+  --ls-body:           0;
+  --ls-eyebrow:        0.14em; /* uppercase Gilroy */
+  --ls-micro:          0.06em;
+
+  /* ----------------------------------------------------------
+     SPACING / RADII / MOTION
+     ---------------------------------------------------------- */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  24px;
+  --space-6:  32px;
+  --space-7:  48px;
+  --space-8:  64px;
+  --space-9:  96px;
+  --space-10: 128px;
+
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --radius-xl: 32px;
+  --radius-pill: 999px;
+
+  --ease-standard: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --ease-emphasis: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-fast:      140ms;
+  --dur-base:      240ms;
+  --dur-slow:      420ms;
+}
+
+/* ============================================================
+   SEMANTIC TEXT STYLES
+   Use these directly: <h1 class="nl-display">…</h1>
+   ============================================================ */
+
+.nl-eyebrow {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: var(--t-eyebrow);
+  letter-spacing: var(--ls-eyebrow);
+  text-transform: uppercase;
+  color: var(--fg-2);
+}
+
+.nl-display-xl,
+.nl-display {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: var(--t-display);
+  line-height: var(--lh-display);
+  letter-spacing: var(--ls-display);
+  color: var(--fg-1);
+  text-wrap: balance;
+}
+.nl-display-xl { font-size: var(--t-display-xl); }
+
+h1, .nl-h1 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: var(--t-h1);
+  line-height: var(--lh-h);
+  letter-spacing: var(--ls-h);
+  color: var(--fg-1);
+  text-wrap: balance;
+  margin: 0;
+}
+h2, .nl-h2 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: var(--t-h2);
+  line-height: var(--lh-h);
+  letter-spacing: var(--ls-h);
+  color: var(--fg-1);
+  text-wrap: balance;
+  margin: 0;
+}
+h3, .nl-h3 {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: var(--t-h3);
+  line-height: var(--lh-tight);
+  letter-spacing: -0.01em;
+  color: var(--fg-1);
+  margin: 0;
+}
+h4, .nl-h4 {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: var(--t-h4);
+  line-height: var(--lh-tight);
+  color: var(--fg-1);
+  margin: 0;
+}
+
+/* Body — Gilroy */
+p, .nl-body {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: var(--t-body);
+  line-height: var(--lh-body);
+  color: var(--fg-1);
+  margin: 0;
+  text-wrap: pretty;
+}
+.nl-body-lg {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: var(--t-body-lg);
+  line-height: var(--lh-body);
+  color: var(--fg-1);
+}
+.nl-body-sm {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: var(--t-body-sm);
+  line-height: var(--lh-loose);
+  color: var(--fg-2);
+}
+.nl-caption {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: var(--t-caption);
+  line-height: var(--lh-body);
+  color: var(--fg-3);
+  letter-spacing: var(--ls-micro);
+}
+
+/* Inline code / monospace */
+code, .nl-code {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  background: var(--nl-burgundy-10);
+  color: var(--nl-burgundy);
+  padding: 0.12em 0.4em;
+  border-radius: var(--radius-xs);
+}
+
+/* Editorial em / quotes */
+.nl-quote {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-style: italic;
+  font-size: var(--t-h3);
+  line-height: var(--lh-tight);
+  color: var(--fg-1);
+}
+
+a, .nl-link {
+  color: var(--nl-burgundy);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: opacity var(--dur-fast) var(--ease-standard);
+}
+a:hover, .nl-link:hover { opacity: 0.7; }
+
+/* Page baseline — apply to <body> when wanted */
+.nl-base {
+  background: var(--bg-page);
+  color: var(--fg-1);
+  font-family: var(--font-sans);
+  font-feature-settings: "ss01", "kern";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

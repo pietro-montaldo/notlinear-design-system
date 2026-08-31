@@ -1,0 +1,29 @@
+<!doctype html>
+<!-- @dsCard group="Colors" name="Primary colors" subtitle="Burgundy · Ivory · Mist" viewport="700x200" -->
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="_shared.css">
+<style>
+  .swatch { flex: 1; min-height: 140px; border-radius: var(--radius-md); padding: 16px; display: flex; flex-direction: column; justify-content: space-between; border: 1px solid var(--border-1); }
+  .swatch .name { font-family: var(--font-serif); font-size: 22px; line-height: 1.1; }
+  .swatch .hex { font-family: var(--font-mono); font-size: 12px; opacity: 0.75; }
+  .burgundy { background: var(--nl-burgundy); color: var(--nl-ivory); border-color: transparent;}
+  .ivory   { background: var(--nl-ivory);   color: var(--nl-burgundy); }
+  .mist    { background: var(--nl-mist);    color: var(--nl-burgundy); border-color: transparent;}
+</style>
+</head><body>
+<div class="card">
+  <div class="row">
+    <div class="swatch burgundy">
+      <div class="name">Deep<br>Burgundy</div>
+      <div class="hex">#3A1721</div>
+    </div>
+    <div class="swatch ivory">
+      <div class="name">Warm<br>Ivory</div>
+      <div class="hex">#FCFAF6</div>
+    </div>
+    <div class="swatch mist">
+      <div class="name">Mist<br>Blue</div>
+      <div class="hex">#CAE3F2</div>
+    </div>
+  </div>
+</div>
+</body></html>

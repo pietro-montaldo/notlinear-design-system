@@ -1,0 +1,38 @@
+<!doctype html>
+<!-- @dsCard group="Components" name="Nav + badges" subtitle="Pill nav bar and status badges" viewport="700x220" -->
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="_shared.css">
+<style>
+  .row-n { display: grid; grid-template-columns: 1fr; gap: 14px; }
+  .navbar { display: flex; align-items: center; justify-content: space-between; padding: 14px 20px; background: rgba(252,250,246,.78); backdrop-filter: blur(12px); border: 1px solid var(--border-1); border-radius: var(--radius-pill); }
+  .navbar .brand { display: flex; align-items: center; gap: 10px; font-family: var(--font-serif); font-size: 18px; color: var(--fg-1); }
+  .navbar .brand img { height: 22px; }
+  .navbar ul { list-style: none; padding: 0; margin: 0; display: flex; gap: 22px; font-family: var(--font-sans); font-size: 14px; font-weight: 500; color: var(--fg-1); }
+  .navbar ul a { text-decoration: none; color: inherit; }
+  .navbar button { font-family: var(--font-sans); font-weight: 600; font-size: 13px; background: var(--nl-burgundy); color: var(--nl-ivory); border: 0; border-radius: 999px; padding: 8px 16px; cursor: pointer; }
+  .badges { display: flex; gap: 8px; flex-wrap: wrap; padding: 4px 4px; }
+  .badge { font: 600 11px/1 var(--font-sans); letter-spacing: 0.1em; text-transform: uppercase; padding: 8px 12px; border-radius: 999px; }
+  .b-burgundy { background: var(--nl-burgundy); color: var(--nl-ivory); }
+  .b-outline { background: transparent; color: var(--nl-burgundy); border: 1px solid var(--nl-burgundy); }
+  .b-mist { background: var(--nl-mist); color: var(--nl-burgundy); }
+  .b-linen { background: var(--nl-linen); color: var(--nl-burgundy); }
+  .b-lilac { background: var(--nl-lilac); color: var(--nl-burgundy); }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="row-n">
+    <div class="navbar">
+      <div class="brand"><img src="../assets/logos/logo_mark/logo_mark_1.png" alt=""> NotLinear</div>
+      <ul><li><a>Curriculum</a></li><li><a>Templates</a></li><li><a>About</a></li></ul>
+      <button>Enroll</button>
+    </div>
+    <div class="badges">
+      <span class="badge b-burgundy">Live cohort</span>
+      <span class="badge b-outline">Self-paced</span>
+      <span class="badge b-mist">New</span>
+      <span class="badge b-linen">Featured</span>
+      <span class="badge b-lilac">Beta</span>
+    </div>
+  </div>
+</div>
+</body></html>
